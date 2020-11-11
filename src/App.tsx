@@ -5,21 +5,28 @@ function App(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
+  const {
+    REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL,
+    REACT_APP_SPOTIFY_AUTH_HEADER,
+  } = process.env;
+
   useEffect(() => {
     const getAccessToken = async (): Promise<void> => {
       setIsError(false);
       setIsLoading(true);
 
       try {
-        const response = await fetch('https://accounts.spotify.com/api/token', {
-          method: 'post',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-            Authorization:
-              'Basic M2YwODRlYjk4Njc1NDdjNDk3MTExN2E4NjY0ZTI3N2Q6Y2NhOGQ0NTc4YTZmNGE0YmJmMmExN2MzMmJjYTNmNzk=',
-          },
-          body: 'grant_type=client_credentials',
-        });
+        const response = await fetch(
+          `${REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL}`,
+          {
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+              Authorization: `Basic ${REACT_APP_SPOTIFY_AUTH_HEADER}`,
+            },
+            body: 'grant_type=client_credentials',
+          }
+        );
         const dataJson = await response;
         const accessTokenResponse = await dataJson.json();
         setAccessToken(accessTokenResponse);
@@ -31,7 +38,7 @@ function App(): JSX.Element {
     };
 
     getAccessToken();
-  }, []);
+  }, [REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL, REACT_APP_SPOTIFY_AUTH_HEADER]);
 
   useEffect(() => {
     console.log(accessToken);
