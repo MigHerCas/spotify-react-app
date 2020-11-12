@@ -37,6 +37,7 @@ const usePlaylist = (
         const apiResponse = await response;
         const playlistItem: PlaylistItem = await apiResponse.json();
         setPlaylist(playlistItem);
+        setIsLoading(false);
       } catch (error) {
         setIsError(error);
       }

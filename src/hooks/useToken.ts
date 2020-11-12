@@ -34,6 +34,7 @@ const useToken = (
         const apiResponse = await response;
         const accessTokenResponse: AccessTokenResponse = await apiResponse.json();
         setAccessToken(accessTokenResponse.access_token);
+        setAccessIsLoading(false);
       } catch (error) {
         setAccessError(error);
       }
