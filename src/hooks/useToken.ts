@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AccessToken, AccessTokenResponse } from '../api/types';
+import { AccessToken, AccessTokenResponse } from '../api/user';
 
 type UseTokenHookReturn = {
   accessToken: AccessToken | undefined;

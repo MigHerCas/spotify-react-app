@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { AccessToken, PlaylistResponse } from '../api/types';
+import { PlaylistItem } from '../api/playlist';
+import { AccessToken } from '../api/user';
 
 type PlaylistHookReturn = {
-  playlist: PlaylistResponse | undefined;
+  playlist: PlaylistItem | undefined;
   playlistLoading: boolean;
   playlistError: boolean;
 };
@@ -11,7 +12,7 @@ const usePlaylist = (
   accessToken: AccessToken,
   playlistId: string
 ): PlaylistHookReturn => {
-  const [playlist, setPlaylist] = useState<PlaylistResponse>();
+  const [playlist, setPlaylist] = useState<PlaylistItem>();
   const [playlistLoading, setIsLoading] = useState(false);
   const [playlistError, setIsError] = useState(false);
 
@@ -32,7 +33,7 @@ const usePlaylist = (
         });
 
         const playlistResponse = await response;
-        const playlistObject: PlaylistResponse = await playlistResponse.json();
+        const playlistObject: PlaylistItem = await playlistResponse.json();
         setPlaylist(playlistObject);
       } catch (error) {
         setIsError(error);

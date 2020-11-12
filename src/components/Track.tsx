@@ -1,12 +1,12 @@
 import React from 'react';
-import { TrackItem } from '../api/types';
+import { TrackItem } from '../api/track';
 
 interface Props {
-  trackResponse: TrackItem;
+  trackItem: TrackItem;
 }
-function Track({ trackResponse }: Props): JSX.Element {
-  const { id, name, href, artists } = trackResponse;
 
+function Track({ trackItem }: Props): JSX.Element {
+  const { id, name, href, artists } = trackItem;
   return (
     <div>
       <div className="track">

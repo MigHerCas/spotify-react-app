@@ -24,7 +24,7 @@ function App(): JSX.Element {
       <h2>Playlist description: {playlist?.description}</h2>
       {/* {tokenIsLoading && <span>{tokenIsLoading}</span>}
       {tokenError && <span>{tokenError}</span>} */}
-      {playlist && <Playlist playlistResponse={playlist} />}
+      {playlist && <Playlist playlistItem={playlist} />}
     </div>
   );
 }

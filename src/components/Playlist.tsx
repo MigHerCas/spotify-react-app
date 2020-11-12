@@ -1,14 +1,12 @@
 import React from 'react';
-import { PlaylistResponse } from '../api/types';
+import { PlaylistItem } from '../api/playlist';
 import Track from './Track';
 
 interface Props {
-  playlistResponse: PlaylistResponse;
+  playlistItem: PlaylistItem;
 }
-
-function Playlist({ playlistResponse }: Props): JSX.Element {
-  const { id, description, href, tracks } = playlistResponse;
-
+function Playlist({ playlistItem }: Props): JSX.Element {
+  const { id, description, href, tracks } = playlistItem;
   return (
     <div>
       <h2>Id: {id}</h2>
@@ -17,7 +15,7 @@ function Playlist({ playlistResponse }: Props): JSX.Element {
 
       {tracks &&
         tracks.items.map(({ track }) => (
-          <Track trackResponse={track} key={track.id} />
+          <Track trackItem={track} key={track.id} />
         ))}
     </div>
   );
