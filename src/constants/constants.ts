@@ -1,0 +1,7 @@
+const DEFAULT_PLAYLISTS_IDS = [
+  '37i9dQZF1DWXRqgorJj26U',
+  '37i9dQZF1DWWGFQLoP9qlv',
+  '37i9dQZEVXbKCF6dqVpDkS',
+];
+
+export default DEFAULT_PLAYLISTS_IDS;

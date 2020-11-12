@@ -30,6 +30,7 @@
   },
   "rules": {
     "linebreak-style": "off",
+    "no-debugger": "off",
     "prettier/prettier": [
       "error",
       {
