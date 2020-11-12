@@ -4,9 +4,20 @@ import Track from './Track';
 
 interface Props {
   playlistResponse: PlaylistResponse;
+  playlistIsLoading: boolean;
+  playlistError: boolean;
 }
-function Playlist({ playlistResponse }: Props): JSX.Element {
+
+function Playlist({
+  playlistResponse,
+  playlistIsLoading,
+  playlistError,
+}: Props): JSX.Element {
   const { id, description, href, tracks } = playlistResponse;
+
+  // eslint-disable-next-line no-console
+  console.log(playlistIsLoading, playlistError);
+
   return (
     <div>
       <h2>Id: {id}</h2>

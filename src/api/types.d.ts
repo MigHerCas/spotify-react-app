@@ -1,5 +1,5 @@
 type TokenType = 'Bearer' | 'Access';
-type AccessToken = string;
+type AccessToken = string | undefined;
 type SpotifyImage = {
   height: null | number;
   width: null | number;
