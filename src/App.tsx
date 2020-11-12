@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AccessTokenResponse, PlaylistResponse } from './api/apiResponses';
+import { AccessTokenResponse, PlaylistResponse } from './api/types';
 
 function App(): JSX.Element {
   const [accessToken, setAccessToken] = useState<string>();
