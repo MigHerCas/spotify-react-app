@@ -1,8 +1,9 @@
 import { PlaylistItem } from '../api/playlist';
 
 const NullyPlaylist: PlaylistItem = {
-  href: '',
   id: '',
+  name: '',
+  href: '',
   tracks: {
     href: '',
     items: [],

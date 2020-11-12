@@ -5,8 +5,9 @@ export type SpotifyImage = {
 };
 
 export interface PlaylistItem {
-  href: string;
   id: string;
+  name: string;
+  href: string;
   tracks: {
     href: string;
     items: TrackItem[];
