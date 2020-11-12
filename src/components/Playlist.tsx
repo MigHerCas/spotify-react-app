@@ -13,17 +13,25 @@ export default function Playlist({
   accessToken,
 }: Props): JSX.Element {
   const { playlist } = usePlaylist(accessToken, playlistId);
-  const { id, description, href, tracks } = playlist;
-  return (
-    <div>
-      <h2>Id: {id}</h2>
-      <p>Description: {description}</p>
-      <a href={href}>Url</a>
+  const { id, description, href, tracks, images } = playlist;
 
-      {tracks &&
-        tracks.items.map(({ track }) => (
-          <Track trackItem={track} key={track.id} />
-        ))}
-    </div>
-  );
+  // If playlist data has been fetched
+  if (id !== '') {
+    return (
+      <div className="playlist-container">
+        <div className="image-wrapper">
+          <img src={images[0].url} alt={description} />
+        </div>
+        <h2>Id: {id}</h2>
+        <p>Description: {description}</p>
+        <a href={href}>Url</a>
+
+        {tracks &&
+          tracks.items.map(({ track }) => (
+            <Track trackItem={track} key={track.id} />
+          ))}
+      </div>
+    );
+  }
+  return <p>Loading</p>;
 }

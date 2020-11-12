@@ -19,15 +19,16 @@ export default function App(): JSX.Element {
     <div className="App">
       <h1>App</h1>
       <PlaylistGrid>
-        {DEFAULT_PLAYLISTS_IDS.map((playlistId) => {
-          return (
-            <Playlist
-              key={playlistId}
-              playlistId={playlistId}
-              accessToken={accessToken}
-            />
-          );
-        })}
+        {accessToken &&
+          DEFAULT_PLAYLISTS_IDS.map((playlistId) => {
+            return (
+              <Playlist
+                key={playlistId}
+                playlistId={playlistId}
+                accessToken={accessToken}
+              />
+            );
+          })}
       </PlaylistGrid>
     </div>
   );
