@@ -10,7 +10,7 @@ type PlaylistHookReturn = {
 const usePlaylist = (
   accessToken: AccessToken,
   playlistId: string
-): [PlaylistHookReturn] => {
+): PlaylistHookReturn => {
   const [playlist, setPlaylist] = useState<PlaylistResponse>();
   const [playlistLoading, setIsLoading] = useState(false);
   const [playlistError, setIsError] = useState(false);
@@ -44,7 +44,7 @@ const usePlaylist = (
     }
   }, [accessToken, REACT_APP_SPOTIFY_PLAYLIST_URL, playlistId]);
 
-  return [{ playlist, playlistLoading, playlistError }];
+  return { playlist, playlistLoading, playlistError };
 };
 
 export default usePlaylist;
