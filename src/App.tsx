@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AccessTokenResponse, PlaylistResponse } from './api/types';
+import Playlist from './components/Playlist';
 
 function App(): JSX.Element {
   const [accessToken, setAccessToken] = useState<string>();
@@ -75,6 +76,7 @@ function App(): JSX.Element {
       <h2>Playlist description: {playlist?.description}</h2>
       {isError && <span>{isError}</span>}
       {isLoading && <span>{isLoading}</span>}
+      {playlist && <Playlist playlistResponse={playlist} />}
     </div>
   );
 }

@@ -6,7 +6,7 @@ type SpotifyImage = {
 };
 
 type PlaylistItem = {
-  track: Track;
+  track: TrackItem;
 };
 
 export interface Artist {
@@ -14,7 +14,7 @@ export interface Artist {
   name: string;
 }
 
-export interface Track {
+export interface TrackItem {
   id: string;
   name: string;
   artists: Artist[];
