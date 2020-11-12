@@ -1,3 +1,5 @@
+import { PlaylistItem } from '../api/playlist';
+
 export default function serialize(
   obj: Record<string, string | number | boolean>,
   isStartingFromMiddle = false
@@ -17,3 +19,19 @@ export default function serialize(
     ? `?${encodedComponents.join('&')}`
     : '';
 }
+
+export const NullyPlaylist: PlaylistItem = {
+  href: '',
+  id: '',
+  tracks: {
+    href: '',
+    items: [],
+  },
+  images: [],
+  public: false,
+  collaborative: false,
+  description: '',
+  external_urls: {
+    spotify: '',
+  },
+};
