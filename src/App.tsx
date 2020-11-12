@@ -11,6 +11,7 @@ function App(): JSX.Element {
   const {
     REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL,
     REACT_APP_SPOTIFY_AUTH_HEADER,
+    REACT_APP_SPOTIFY_PLAYLIST_URL,
   } = process.env;
 
   useEffect(() => {
@@ -51,30 +52,42 @@ function App(): JSX.Element {
       '37i9dQZEVXbKCF6dqVpDkS',
     ];
 
-    if (accessToken) {
-      fetch(`https://api.spotify.com/v1/playlists/${playlistSamples[1]}`, {
-        method: 'get',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      })
-        .then((response) => response.json())
-        .then((response) => {
-          setPlaylist(response);
-        })
-        .catch((ex) => {
-          setIsError(ex);
-        });
-    }
-  }, [accessToken]);
+    const fetchPlaylist = async (): Promise<void> => {
+      const url = `${REACT_APP_SPOTIFY_PLAYLIST_URL}/${playlistSamples[1]}`;
+      setIsError(false);
+      setIsLoading(true);
 
+      try {
+        const response = await fetch(url, {
+          method: 'get',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        const playlistResponse = await response;
+        const playlistObject: PlaylistResponse = await playlistResponse.json();
+        setPlaylist(playlistObject);
+      } catch (error) {
+        setIsError(error);
+      }
+    };
+
+    if (accessToken) {
+      fetchPlaylist();
+    }
+  }, [accessToken, REACT_APP_SPOTIFY_PLAYLIST_URL]);
+
+  // eslint-disable-next-line no-console
   console.log(playlist);
+
+  // eslint-disable-next-line no-console
+  if (isError) console.log(isError);
 
   return (
     <div className="App">
       <h1>App</h1>
       <h2>Playlist description: {playlist?.description}</h2>
-      {isError && <span>{isError}</span>}
       {isLoading && <span>{isLoading}</span>}
       {playlist && <Playlist playlistResponse={playlist} />}
     </div>

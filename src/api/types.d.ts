@@ -1,4 +1,5 @@
 type TokenType = 'Bearer' | 'Access';
+type AccessToken = string;
 type SpotifyImage = {
   height: null | number;
   width: null | number;
@@ -23,7 +24,7 @@ export interface TrackItem {
 }
 
 export interface AccessTokenResponse {
-  access_token: string;
+  access_token: AccessToken;
   expires_in: number;
   scope: string;
   token_type: TokenType;
