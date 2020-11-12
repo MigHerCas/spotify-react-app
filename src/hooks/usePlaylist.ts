@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react';
 import { PlaylistItem } from '../api/playlist';
 import { AccessToken } from '../api/user';
+import { NullyPlaylist } from '../utils';
 
 type PlaylistHookReturn = {
-  playlist: PlaylistItem | undefined;
+  playlist: PlaylistItem;
   playlistLoading: boolean;
   playlistError: boolean;
 };
+
+const { REACT_APP_SPOTIFY_PLAYLIST_URL } = process.env;
 
 const usePlaylist = (
   accessToken: AccessToken,
   playlistId: string
 ): PlaylistHookReturn => {
-  const [playlist, setPlaylist] = useState<PlaylistItem>();
+  const [playlist, setPlaylist] = useState<PlaylistItem>(NullyPlaylist);
   const [playlistLoading, setIsLoading] = useState(false);
   const [playlistError, setIsError] = useState(false);
-
-  const { REACT_APP_SPOTIFY_PLAYLIST_URL } = process.env;
 
   useEffect(() => {
     const url = `${REACT_APP_SPOTIFY_PLAYLIST_URL}/${playlistId}`;
@@ -34,8 +35,8 @@ const usePlaylist = (
         });
 
         const apiResponse = await response;
-        const playlistObject: PlaylistItem = await apiResponse.json();
-        setPlaylist(playlistObject);
+        const playlistItem: PlaylistItem = await apiResponse.json();
+        setPlaylist(playlistItem);
       } catch (error) {
         setIsError(error);
       }
@@ -44,7 +45,7 @@ const usePlaylist = (
     if (accessToken) {
       fetchPlaylist();
     }
-  }, [accessToken, REACT_APP_SPOTIFY_PLAYLIST_URL, playlistId]);
+  }, [accessToken, playlistId]);
 
   return { playlist, playlistLoading, playlistError };
 };

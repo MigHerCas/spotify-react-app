@@ -1,6 +1,7 @@
 import React from 'react';
 import Playlist from './components/Playlist';
-import usePlaylist from './hooks/usePlaylist';
+import PlaylistGrid from './components/PlaylistGrid';
+import DEFAULT_PLAYLISTS_IDS from './constants/constants';
 import useToken from './hooks/useToken';
 
 const {
@@ -8,26 +9,26 @@ const {
   REACT_APP_SPOTIFY_AUTH_HEADER,
 } = process.env;
 
-function App(): JSX.Element {
-  const { accessToken, accessIsLoading, accessError } = useToken(
+export default function App(): JSX.Element {
+  const { accessToken } = useToken(
     REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL,
     REACT_APP_SPOTIFY_AUTH_HEADER
   );
-  const { playlist, playlistLoading, playlistError } = usePlaylist(
-    accessToken,
-    '37i9dQZF1DWXRqgorJj26U'
-  );
-
-  // eslint-disable-next-line no-console
-  console.log(playlist);
 
   return (
     <div className="App">
       <h1>App</h1>
-      <h2>Playlist description: {playlist?.description}</h2>
-      {playlist && <Playlist playlistItem={playlist} />}
+      <PlaylistGrid>
+        {DEFAULT_PLAYLISTS_IDS.map((playlistId) => {
+          return (
+            <Playlist
+              key={playlistId}
+              playlistId={playlistId}
+              accessToken={accessToken}
+            />
+          );
+        })}
+      </PlaylistGrid>
     </div>
   );
 }
-
-export default App;

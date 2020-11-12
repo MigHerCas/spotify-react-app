@@ -1,12 +1,19 @@
 import React from 'react';
-import { PlaylistItem } from '../api/playlist';
+import { AccessToken } from '../api/user';
+import usePlaylist from '../hooks/usePlaylist';
 import Track from './Track';
 
 interface Props {
-  playlistItem: PlaylistItem;
+  playlistId: string;
+  accessToken: AccessToken;
 }
-function Playlist({ playlistItem }: Props): JSX.Element {
-  const { id, description, href, tracks } = playlistItem;
+
+export default function Playlist({
+  playlistId,
+  accessToken,
+}: Props): JSX.Element {
+  const { playlist } = usePlaylist(accessToken, playlistId);
+  const { id, description, href, tracks } = playlist;
   return (
     <div>
       <h2>Id: {id}</h2>
@@ -20,5 +27,3 @@ function Playlist({ playlistItem }: Props): JSX.Element {
     </div>
   );
 }
-
-export default Playlist;
