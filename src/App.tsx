@@ -17,7 +17,7 @@ export default function App(): JSX.Element {
 
   return (
     <div className="App">
-      <h1>App</h1>
+      <h1>Spotify React App</h1>
       <PlaylistGrid>
         {accessToken &&
           DEFAULT_PLAYLISTS_IDS.map((playlistId) => {
