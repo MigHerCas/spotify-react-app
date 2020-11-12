@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { PlaylistItem } from '../api/playlist';
 import { AccessToken } from '../api/user';
-import { NullyPlaylist } from '../utils';
+import NullyPlaylist from '../utils';
 
 type PlaylistHookReturn = {
   playlist: PlaylistItem;

@@ -16,4 +16,4 @@ const NullyPlaylist: PlaylistItem = {
   },
 };
 
-export default { NullyPlaylist };
+export default NullyPlaylist;
