@@ -9,11 +9,14 @@ const {
 } = process.env;
 
 function App(): JSX.Element {
-  const { accessToken } = useToken(
+  const { accessToken, accessIsLoading, accessError } = useToken(
     REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL,
     REACT_APP_SPOTIFY_AUTH_HEADER
   );
-  const { playlist } = usePlaylist(accessToken, '37i9dQZF1DWXRqgorJj26U');
+  const { playlist, playlistLoading, playlistError } = usePlaylist(
+    accessToken,
+    '37i9dQZF1DWXRqgorJj26U'
+  );
 
   // eslint-disable-next-line no-console
   console.log(playlist);
@@ -22,8 +25,6 @@ function App(): JSX.Element {
     <div className="App">
       <h1>App</h1>
       <h2>Playlist description: {playlist?.description}</h2>
-      {/* {tokenIsLoading && <span>{tokenIsLoading}</span>}
-      {tokenError && <span>{tokenError}</span>} */}
       {playlist && <Playlist playlistItem={playlist} />}
     </div>
   );

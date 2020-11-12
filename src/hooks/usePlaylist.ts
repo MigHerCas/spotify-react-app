@@ -19,8 +19,9 @@ const usePlaylist = (
   const { REACT_APP_SPOTIFY_PLAYLIST_URL } = process.env;
 
   useEffect(() => {
+    const url = `${REACT_APP_SPOTIFY_PLAYLIST_URL}/${playlistId}`;
+
     const fetchPlaylist = async (): Promise<void> => {
-      const url = `${REACT_APP_SPOTIFY_PLAYLIST_URL}/${playlistId}`;
       setIsError(false);
       setIsLoading(true);
 
@@ -32,8 +33,8 @@ const usePlaylist = (
           },
         });
 
-        const playlistResponse = await response;
-        const playlistObject: PlaylistItem = await playlistResponse.json();
+        const apiResponse = await response;
+        const playlistObject: PlaylistItem = await apiResponse.json();
         setPlaylist(playlistObject);
       } catch (error) {
         setIsError(error);

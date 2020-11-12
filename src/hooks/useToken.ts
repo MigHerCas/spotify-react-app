@@ -3,6 +3,8 @@ import { AccessToken, AccessTokenResponse } from '../api/user';
 
 type UseTokenHookReturn = {
   accessToken: AccessToken | undefined;
+  accessIsLoading: boolean;
+  accessError: boolean;
 };
 
 const useToken = (
@@ -10,28 +12,30 @@ const useToken = (
   REACT_APP_SPOTIFY_AUTH_HEADER: string | undefined
 ): UseTokenHookReturn => {
   const [accessToken, setAccessToken] = useState<AccessToken>();
+  const [accessIsLoading, setAccessIsLoading] = useState(false);
+  const [accessError, setAccessError] = useState(false);
 
   useEffect(() => {
+    const url = `${REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL}`;
     const getAccessToken = async (): Promise<void> => {
-      try {
-        const response = await fetch(
-          `${REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL}`,
-          {
-            method: 'post',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-              Authorization: `Basic ${REACT_APP_SPOTIFY_AUTH_HEADER}`,
-            },
-            body: 'grant_type=client_credentials',
-          }
-        );
+      setAccessError(false);
+      setAccessIsLoading(true);
 
-        const dataJson = await response;
-        const accessTokenResponse: AccessTokenResponse = await dataJson.json();
+      try {
+        const response = await fetch(url, {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            Authorization: `Basic ${REACT_APP_SPOTIFY_AUTH_HEADER}`,
+          },
+          body: 'grant_type=client_credentials',
+        });
+
+        const apiResponse = await response;
+        const accessTokenResponse: AccessTokenResponse = await apiResponse.json();
         setAccessToken(accessTokenResponse.access_token);
       } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
+        setAccessError(error);
       }
     };
 
@@ -43,7 +47,7 @@ const useToken = (
     }
   }, [REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL, REACT_APP_SPOTIFY_AUTH_HEADER]);
 
-  return { accessToken };
+  return { accessToken, accessIsLoading, accessError };
 };
 
 export default useToken;
