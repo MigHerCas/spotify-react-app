@@ -1,0 +1,35 @@
+header {
+  .theme-switcher-wrapper {
+    display: flex;
+    align-items: center;
+    float: right;
+
+    span {
+      display: inline-block;
+      margin-right: $mediumMargin;
+      font-size: 2rem;
+      letter-spacing: 3px;
+      line-height: 1.5;
+      color: $darkGrey;
+    }
+  }
+
+  .theme-switcher {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    background-color: secondaryColor_dark;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4rem;
+      height: 4rem;
+      background-image: $warmGradient;
+      border-radius: 50%;
+    }
+  }
+}
