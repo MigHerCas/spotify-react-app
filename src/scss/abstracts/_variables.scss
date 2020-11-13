@@ -1,0 +1,38 @@
+// Colors
+$white: #ffffff;
+$black: #000000;
+$lightGrey: #aaaaaa;
+$darkGrey: #444444;
+
+// Dark theme
+$mainColor_dark: $darkGrey;
+$secondaryColor_dark: #626262;
+
+// Light theme
+$mainColor_light: $white;
+$mainColor_secondary: #dedede;
+
+// Spacing
+$mediumSpace: 1.5rem;
+$largeSpace: 2.5rem;
+
+// Gradients
+$warmGradient: linear-gradient(180deg, #f76b1c 0%, #fad961 100%);
+$coldGradient: linear-gradient(180deg, #329231 0%, #1ed760 100%);
+
+// Typography
+$font-family: "Poppins", sans-serif;
+
+// Font-weights
+$thin: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+
+// Utils
+$box-shadow_light: 0px 25px 40px rgba(0, 0, 0, 0.03);
+$box-shadow_dark: 0px 4px 30px 10px rgba(0, 0, 0, 0.1);
+$radius-big: 32px;
+$radius-small: 20px;
