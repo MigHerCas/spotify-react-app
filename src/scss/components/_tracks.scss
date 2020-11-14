@@ -1,0 +1,34 @@
+.tracks-panel {
+  .track__item {
+    margin-bottom: $mediumMargin;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .track__button {
+    width: 100%;
+    max-width: 40rem;
+    border: 0;
+    background-color: $primaryColor_dark;
+    cursor: pointer;
+    outline: none;
+    text-align: left;
+  }
+
+  .track__title {
+    font-size: 1.5rem;
+    font-weight: $semibold;
+    line-height: 1.5;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+
+  .track__subtitle {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: $regular;
+    color: $lightGrey;
+  }
+}

@@ -19,7 +19,7 @@ export default function HTML(): JSX.Element {
       </header>
       <main>
         <section className="grid">
-          <div className="panel playlist-panel">
+          <div className="panel playlists-panel">
             <ol className="scrolling-wrapper padding-default shadow--dark radius--big">
               <li className="playlist__item">
                 <button
@@ -96,7 +96,64 @@ export default function HTML(): JSX.Element {
             </ol>
           </div>
           <div className="panel tracks-panel">
-            <div className="scrolling-wrapper shadow--dark radius--big" />
+            <ol className="scrolling-wrapper padding-default shadow--dark radius--big">
+              <li className="track__item">
+                <button
+                  type="button"
+                  className="track__button padding-default radius--big"
+                >
+                  <h2 className="track__title">Find my way</h2>
+                  <h3 className="track__subtitle">Da baby</h3>
+                </button>
+              </li>
+              <li className="track__item">
+                <button
+                  type="button"
+                  className="track__button padding-default radius--big"
+                >
+                  <h2 className="track__title">Find my way</h2>
+                  <h3 className="track__subtitle">Da baby</h3>
+                </button>
+              </li>
+
+              <li className="track__item">
+                <button
+                  type="button"
+                  className="track__button padding-default radius--big"
+                >
+                  <h2 className="track__title">Find my way</h2>
+                  <h3 className="track__subtitle">Da baby</h3>
+                </button>
+              </li>
+
+              <li className="track__item">
+                <button
+                  type="button"
+                  className="track__button padding-default radius--big"
+                >
+                  <h2 className="track__title">Find my way</h2>
+                  <h3 className="track__subtitle">Da baby</h3>
+                </button>
+              </li>
+              <li className="track__item">
+                <button
+                  type="button"
+                  className="track__button padding-default radius--big"
+                >
+                  <h2 className="track__title">Find my way</h2>
+                  <h3 className="track__subtitle">Da baby</h3>
+                </button>
+              </li>
+              <li className="track__item">
+                <button
+                  type="button"
+                  className="track__button padding-default radius--big"
+                >
+                  <h2 className="track__title">Find my way</h2>
+                  <h3 className="track__subtitle">Da baby</h3>
+                </button>
+              </li>
+            </ol>
           </div>
         </section>
       </main>
