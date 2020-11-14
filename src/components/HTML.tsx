@@ -8,7 +8,6 @@ export default function HTML(): JSX.Element {
       <header>
         <img src={spotifyLogo} className="logo" alt="Spotify Logo" />
         <div className="theme-switcher-wrapper">
-          <span className="theme-switcher-span">Theme</span>
           <button
             type="button"
             className="theme-switcher shadow--dark radius--big"
@@ -21,6 +20,42 @@ export default function HTML(): JSX.Element {
         <section className="grid">
           <div className="panel playlists-panel">
             <ol className="scrolling-wrapper padding-default shadow--dark radius--big">
+              <li className="playlist__item">
+                <button
+                  type="button"
+                  className="playlist__button padding-default radius--big selected"
+                >
+                  <div className="playlist__image-wrapper">
+                    <img src={singer} alt="Alt text" />
+                  </div>
+                  <div className="playlist__details">
+                    <h2 className="playlist__title">Rock Classics</h2>
+                    <h3 className="playlist__subtitle">Rock</h3>
+                    <p className="playlist__description">
+                      Rock legends and epic songs that continue to inspire
+                      generations.
+                    </p>
+                  </div>
+                </button>
+              </li>
+              <li className="playlist__item">
+                <button
+                  type="button"
+                  className="playlist__button padding-default radius--big"
+                >
+                  <div className="playlist__image-wrapper">
+                    <img src={singer} alt="Alt text" />
+                  </div>
+                  <div className="playlist__details">
+                    <h2 className="playlist__title">Rock Classics</h2>
+                    <h3 className="playlist__subtitle">Rock</h3>
+                    <p className="playlist__description">
+                      Rock legends and epic songs that continue to inspire
+                      generations.
+                    </p>
+                  </div>
+                </button>
+              </li>
               <li className="playlist__item">
                 <button
                   type="button"
