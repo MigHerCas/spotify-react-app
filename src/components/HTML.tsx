@@ -20,93 +20,84 @@ export default function HTML(): JSX.Element {
       <main>
         <section className="grid">
           <div className="panel playlist-panel">
-            <div className="scrolling-wrapper padding-default shadow--dark radius--big">
-              <button
-                type="button"
-                className="playlist__item padding-default radius--big"
-              >
-                <div className="playlist__image-wrapper">
-                  <img src={singer} alt="Alt text" />
-                </div>
-                <div className="playlist__details">
-                  <h2 className="playlist__title">Rock Classics</h2>
-                  <h3 className="playlist__subtitle">Rock</h3>
-                  <p className="playlist__description">
-                    Rock legends and epic songs that continue to inspire
-                    generations.
-                  </p>
-                </div>
-              </button>
-
-              <button
-                type="button"
-                className="playlist__item padding-default radius--big"
-              >
-                <div className="playlist__image-wrapper">
-                  <img src={singer} alt="Alt text" />
-                </div>
-                <div className="playlist__details">
-                  <h2 className="playlist__title">Rock Classics</h2>
-                  <h3 className="playlist__subtitle">Rock</h3>
-                  <p className="playlist__description">
-                    Rock legends and epic songs that continue to inspire
-                    generations.
-                  </p>
-                </div>
-              </button>
-              <button
-                type="button"
-                className="playlist__item padding-default radius--big"
-              >
-                <div className="playlist__image-wrapper">
-                  <img src={singer} alt="Alt text" />
-                </div>
-                <div className="playlist__details">
-                  <h2 className="playlist__title">Rock Classics</h2>
-                  <h3 className="playlist__subtitle">Rock</h3>
-                  <p className="playlist__description">
-                    Rock legends and epic songs that continue to inspire
-                    generations.
-                  </p>
-                </div>
-              </button>
-              <button
-                type="button"
-                className="playlist__item padding-default radius--big"
-              >
-                <div className="playlist__image-wrapper">
-                  <img src={singer} alt="Alt text" />
-                </div>
-                <div className="playlist__details">
-                  <h2 className="playlist__title">Rock Classics</h2>
-                  <h3 className="playlist__subtitle">Rock</h3>
-                  <p className="playlist__description">
-                    Rock legends and epic songs that continue to inspire
-                    generations.
-                  </p>
-                </div>
-              </button>
-              <button
-                type="button"
-                className="playlist__item padding-default radius--big"
-              >
-                <div className="playlist__image-wrapper">
-                  <img src={singer} alt="Alt text" />
-                </div>
-                <div className="playlist__details">
-                  <h2 className="playlist__title">Rock Classics</h2>
-                  <h3 className="playlist__subtitle">Rock</h3>
-                  <p className="playlist__description">
-                    Rock legends and epic songs that continue to inspire
-                    generations.
-                  </p>
-                </div>
-              </button>
-            </div>
+            <ol className="scrolling-wrapper padding-default shadow--dark radius--big">
+              <li className="playlist__item">
+                <button
+                  type="button"
+                  className="playlist__button padding-default radius--big"
+                >
+                  <div className="playlist__image-wrapper">
+                    <img src={singer} alt="Alt text" />
+                  </div>
+                  <div className="playlist__details">
+                    <h2 className="playlist__title">Rock Classics</h2>
+                    <h3 className="playlist__subtitle">Rock</h3>
+                    <p className="playlist__description">
+                      Rock legends and epic songs that continue to inspire
+                      generations.
+                    </p>
+                  </div>
+                </button>
+              </li>
+              <li className="playlist__item">
+                <button
+                  type="button"
+                  className="playlist__button padding-default radius--big"
+                >
+                  <div className="playlist__image-wrapper">
+                    <img src={singer} alt="Alt text" />
+                  </div>
+                  <div className="playlist__details">
+                    <h2 className="playlist__title">Rock Classics</h2>
+                    <h3 className="playlist__subtitle">Rock</h3>
+                    <p className="playlist__description">
+                      Rock legends and epic songs that continue to inspire
+                      generations.
+                    </p>
+                  </div>
+                </button>
+              </li>
+              <li className="playlist__item">
+                <button
+                  type="button"
+                  className="playlist__button padding-default radius--big"
+                >
+                  <div className="playlist__image-wrapper">
+                    <img src={singer} alt="Alt text" />
+                  </div>
+                  <div className="playlist__details">
+                    <h2 className="playlist__title">Rock Classics</h2>
+                    <h3 className="playlist__subtitle">Rock</h3>
+                    <p className="playlist__description">
+                      Rock legends and epic songs that continue to inspire
+                      generations.
+                    </p>
+                  </div>
+                </button>
+              </li>
+              <li className="playlist__item">
+                <button
+                  type="button"
+                  className="playlist__button padding-default radius--big"
+                >
+                  <div className="playlist__image-wrapper">
+                    <img src={singer} alt="Alt text" />
+                  </div>
+                  <div className="playlist__details">
+                    <h2 className="playlist__title">Rock Classics</h2>
+                    <h3 className="playlist__subtitle">Rock</h3>
+                    <p className="playlist__description">
+                      Rock legends and epic songs that continue to inspire
+                      generations.
+                    </p>
+                  </div>
+                </button>
+              </li>
+            </ol>
           </div>
-          {/* <div className="panel tracks-panel shadow--dark radius--big">
-            <div className="scrolling-wrapper" />
-          </div> */}
+          <div className="panel tracks-panel">
+            <div className="scrolling-wrapper shadow--dark radius--big" />
+          </div>
         </section>
       </main>
     </>
