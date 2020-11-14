@@ -1,16 +1,31 @@
 main {
   .panel {
     position: relative;
-    background-color: $secondaryColor_dark;
     min-height: 40rem;
+
+    @media (min-width: 768px) {
+      min-height: 50rem;
+    }
+
+    @media (min-width: 1024px) {
+      min-height: 60rem;
+    }
 
     .scrolling-wrapper {
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%); // Horizontally centered
       overflow: auto;
+      max-width: calc(40rem + #{$mediumMargin});
+      background-color: $secondaryColor_dark;
+
+      @media (min-width: 1024px) {
+        transform: none;
+        left: 0;
+      }
     }
   }
 

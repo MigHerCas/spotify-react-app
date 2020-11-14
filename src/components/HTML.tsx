@@ -19,8 +19,8 @@ export default function HTML(): JSX.Element {
       </header>
       <main>
         <section className="grid">
-          <div className="panel playlist-panel shadow--dark radius--big">
-            <div className="scrolling-wrapper padding-default">
+          <div className="panel playlist-panel">
+            <div className="scrolling-wrapper padding-default shadow--dark radius--big">
               <button
                 type="button"
                 className="playlist__item padding-default radius--big"

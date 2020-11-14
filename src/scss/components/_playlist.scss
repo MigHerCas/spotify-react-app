@@ -1,10 +1,11 @@
 .playlist-panel {
   .playlist__item {
+    max-width: 40rem;
+    margin-bottom: $mediumMargin;
     border: 0;
     background-color: $primaryColor_dark;
     cursor: pointer;
     outline: none;
-    margin-bottom: $mediumMargin;
 
     &:last-child {
       margin-bottom: 0;
