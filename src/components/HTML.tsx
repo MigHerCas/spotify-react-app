@@ -106,53 +106,6 @@ export default function HTML(): JSX.Element {
                   <h3 className="track__subtitle">Da baby</h3>
                 </button>
               </li>
-              <li className="track__item">
-                <button
-                  type="button"
-                  className="track__button padding-default radius--big"
-                >
-                  <h2 className="track__title">Find my way</h2>
-                  <h3 className="track__subtitle">Da baby</h3>
-                </button>
-              </li>
-
-              <li className="track__item">
-                <button
-                  type="button"
-                  className="track__button padding-default radius--big"
-                >
-                  <h2 className="track__title">Find my way</h2>
-                  <h3 className="track__subtitle">Da baby</h3>
-                </button>
-              </li>
-
-              <li className="track__item">
-                <button
-                  type="button"
-                  className="track__button padding-default radius--big"
-                >
-                  <h2 className="track__title">Find my way</h2>
-                  <h3 className="track__subtitle">Da baby</h3>
-                </button>
-              </li>
-              <li className="track__item">
-                <button
-                  type="button"
-                  className="track__button padding-default radius--big"
-                >
-                  <h2 className="track__title">Find my way</h2>
-                  <h3 className="track__subtitle">Da baby</h3>
-                </button>
-              </li>
-              <li className="track__item">
-                <button
-                  type="button"
-                  className="track__button padding-default radius--big"
-                >
-                  <h2 className="track__title">Find my way</h2>
-                  <h3 className="track__subtitle">Da baby</h3>
-                </button>
-              </li>
             </ol>
           </div>
         </section>

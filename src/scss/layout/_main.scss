@@ -20,7 +20,7 @@ main {
     }
 
     @media (min-width: 1024px) {
-      grid-column: 1 / 5;
+      grid-column: 1 / 6;
     }
   }
 
@@ -32,11 +32,22 @@ main {
     }
 
     @media (min-width: 1024px) {
-      grid-column: 6 / 13;
+      grid-column: 7 / -1;
+    }
+
+    @media (min-width: 1200px) {
+      grid-column: 6 / -1;
     }
 
     .scrolling-wrapper {
-      max-width: calc(40rem + #{$mediumMargin});
+      @media (min-width: 1024px) {
+        transform: none;
+        right: 0;
+        left: auto;
+        max-width: none;
+        column-count: 2;
+        column-gap: $mediumMargin;
+      }
     }
   }
 
