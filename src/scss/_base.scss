@@ -21,16 +21,13 @@ body {
   scroll-behavior: smooth;
 }
 
-body {
-  padding: 50px;
-}
-
 /*
   * Reset top margins on titles that are first-child.
 */
 h1,
 h2,
 h3 {
+  font-family: $font-family;
   &:first-child {
     margin-top: 0;
   }
@@ -42,4 +39,8 @@ h3 {
 img {
   height: auto;
   max-width: 100%;
+}
+
+button {
+  font-family: $font-family;
 }
