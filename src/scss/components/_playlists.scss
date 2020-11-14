@@ -10,13 +10,14 @@
   .playlist__button {
     max-width: 40rem;
     border: 0;
-    background-color: $primaryColor_dark;
+    background: $primaryColor_dark;
     cursor: pointer;
     outline: none;
+    transition: background 500ms ease-out;
   }
 
   .playlist__button.selected {
-    background-image: $warmGradient;
+    background: $warmGradient;
 
     .playlist__subtitle,
     .playlist__description {
