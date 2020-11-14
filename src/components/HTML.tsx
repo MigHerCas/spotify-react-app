@@ -24,7 +24,7 @@ export default function HTML(): JSX.Element {
               <li className="playlist__item">
                 <button
                   type="button"
-                  className="playlist__button padding-default radius--big"
+                  className="playlist__button padding-default radius--big selected"
                 >
                   <div className="playlist__image-wrapper">
                     <img src={singer} alt="Alt text" />
