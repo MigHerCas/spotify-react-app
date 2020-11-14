@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Grid from './components/layout/Grid';
 import Header from './components/layout/Header';
 import Playlist from './components/Playlist';
-import PlaylistGrid from './components/PlaylistGrid';
 import PlaylistsPanel from './components/PlaylistsPanel';
 import TracksPanel from './components/TracksPanel';
 import DEFAULT_PLAYLISTS_IDS from './constants/constants';
@@ -31,18 +30,16 @@ export default function App(): JSX.Element {
           </Grid>
         </>
       ) : (
-        <PlaylistGrid>
-          {accessToken &&
-            DEFAULT_PLAYLISTS_IDS.map((playlistId) => {
-              return (
-                <Playlist
-                  key={playlistId}
-                  playlistId={playlistId}
-                  accessToken={accessToken}
-                />
-              );
-            })}
-        </PlaylistGrid>
+        accessToken &&
+        DEFAULT_PLAYLISTS_IDS.map((playlistId) => {
+          return (
+            <Playlist
+              key={playlistId}
+              playlistId={playlistId}
+              accessToken={accessToken}
+            />
+          );
+        })
       )}
     </div>
   );
