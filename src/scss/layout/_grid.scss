@@ -17,6 +17,11 @@ main {
 .grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  row-gap: $mediumMargin;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(10, 1fr);
+  }
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(12, 1fr);

@@ -10,27 +10,14 @@ main {
     @media (min-width: 1024px) {
       min-height: 60rem;
     }
-
-    .scrolling-wrapper {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%); // Horizontally centered
-      overflow: auto;
-      max-width: calc(40rem + #{$mediumMargin});
-      background-color: $secondaryColor_dark;
-
-      @media (min-width: 1024px) {
-        transform: none;
-        left: 0;
-      }
-    }
   }
 
   .playlist-panel {
     grid-column: 1 / -1;
+
+    @media (min-width: 768px) {
+      grid-column: 1 / 6;
+    }
 
     @media (min-width: 1024px) {
       grid-column: 1 / 5;
@@ -40,8 +27,34 @@ main {
   .tracks-panel {
     grid-column: 1 / -1;
 
+    @media (min-width: 768px) {
+      grid-column: 7 / -1;
+    }
+
     @media (min-width: 1024px) {
       grid-column: 6 / 13;
+    }
+
+    .scrolling-wrapper {
+      max-width: calc(40rem + #{$mediumMargin});
+    }
+  }
+
+  .scrolling-wrapper {
+    position: absolute;
+    width: 100%;
+    max-width: calc(40rem + #{$mediumMargin});
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); // Horizontally centered
+    overflow: auto;
+    background-color: $secondaryColor_dark;
+    list-style: none;
+
+    @media (min-width: 1024px) {
+      transform: none;
+      left: 0;
     }
   }
 }
