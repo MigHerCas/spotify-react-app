@@ -6,12 +6,16 @@ import usePlaylist from '../hooks/usePlaylist';
 interface Props {
   playlistId: string;
   accessToken: AccessToken;
+  selectedPlaylistId: string;
+  setSelectedPlaylistId: Dispatch<SetStateAction<string>>;
   setSelectedTracks: Dispatch<SetStateAction<TrackItem[]>>;
 }
 
 export default function PlaylistComponent({
   playlistId,
   accessToken,
+  selectedPlaylistId,
+  setSelectedPlaylistId,
   setSelectedTracks,
 }: Props): JSX.Element {
   const { playlist } = usePlaylist(accessToken, playlistId);
@@ -23,8 +27,13 @@ export default function PlaylistComponent({
       <li className="playlist__item">
         <button
           type="button"
-          className="playlist__button padding-default radius--big selected"
-          onClick={() => setSelectedTracks(tracks.items)}
+          className={`playlist__button padding-default radius--big ${
+            selectedPlaylistId === id ? 'selected' : ''
+          }`}
+          onClick={() => {
+            setSelectedPlaylistId(id);
+            setSelectedTracks(tracks.items);
+          }}
         >
           <div className="playlist__image-wrapper">
             <img src={images[0].url} alt="Alt text" />

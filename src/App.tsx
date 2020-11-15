@@ -16,6 +16,7 @@ export default function App(): JSX.Element {
     REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL,
     REACT_APP_SPOTIFY_AUTH_HEADER
   );
+  const [selectedPlaylist, setSelectedPlaylist] = useState<string>('');
   const [selectedTracks, setSelectedTracks] = useState<TrackItem[]>([]);
 
   return (
@@ -24,6 +25,8 @@ export default function App(): JSX.Element {
       <Grid>
         <PlaylistsPanel
           accessToken={accessToken}
+          selectedPlaylistId={selectedPlaylist}
+          setSelectedPlaylistId={setSelectedPlaylist}
           setSelectedTracks={setSelectedTracks}
         />
         <TracksPanel tracks={selectedTracks} />
