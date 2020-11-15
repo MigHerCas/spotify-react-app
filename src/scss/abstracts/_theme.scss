@@ -1,0 +1,31 @@
+:root {
+  // Dark theme as default
+  --color-primary: #444444;
+  --color-secondary: #626262;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #aaaaaa;
+  --color-gradient: linear-gradient(180deg, #f76b1c 0%, #fad961 100%);
+
+  // Neutral
+  --color-white: #ffffff;
+}
+
+body.dark-theme {
+  --color-primary: #444444;
+  --color-secondary: #626262;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #aaaaaa;
+
+  // Warm gradient
+  --color-gradient: linear-gradient(180deg, #f76b1c 0%, #fad961 100%);
+}
+
+body.light-theme {
+  --color-primary: #ffffff;
+  --color-secondary: #dedede;
+  --color-text-primary: #444444;
+  --color-text-secondary: #aaaaaa;
+
+  // Cold gradient
+  --color-gradient: linear-gradient(180deg, #329231 0%, #1ed760 100%);
+}
