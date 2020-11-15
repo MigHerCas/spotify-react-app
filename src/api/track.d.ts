@@ -4,9 +4,11 @@ export interface Artist {
 }
 
 export interface TrackItem {
+  track: Track;
+}
+
+export interface Track {
   id: string;
   name: string;
   artists: Artist[];
-  href: string;
-  preview_url: string;
 }

@@ -1,0 +1,29 @@
+.App {
+  padding: $mediumMargin;
+  background-color: var(--color-primary);
+  min-height: 100vh;
+
+  @media (min-width: 1024px) {
+    padding: $largeMargin;
+  }
+}
+
+header,
+main {
+  max-width: 124rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  row-gap: 3rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}

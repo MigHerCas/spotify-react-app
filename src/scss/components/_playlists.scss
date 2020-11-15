@@ -1,0 +1,74 @@
+.playlists-panel {
+  .playlist__item {
+    margin-bottom: $mediumMargin;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .playlist__button {
+    max-width: 40rem;
+    background: var(--color-primary);
+    cursor: pointer;
+    transition: all 300ms ease-out;
+  }
+
+  .playlist__button {
+    &.selected,
+    &:focus {
+      background: var(--color-gradient);
+
+      .playlist__title,
+      .playlist__subtitle,
+      .playlist__description {
+        color: var(--color-white);
+      }
+    }
+
+    .playlist__subtitle,
+    .playlist__description {
+      color: var(--color-text-secondary);
+    }
+  }
+
+  .playlist__image-wrapper {
+    position: relative;
+    display: flex;
+    float: left;
+  }
+
+  .playlist__image-wrapper > img {
+    object-fit: cover;
+    width: 8rem;
+    height: 8rem;
+    border-radius: $radius-small;
+  }
+
+  .playlist__details {
+    text-align: left;
+    padding-left: calc(8rem + #{$mediumMargin}); // To fit floated image
+  }
+
+  .playlist__title {
+    color: var(--color-text-primary);
+    font-size: 1.5rem;
+    line-height: 23px;
+    font-weight: $semibold;
+  }
+
+  .playlist__subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: $regular;
+    margin-bottom: 0.5rem;
+  }
+
+  .playlist__description {
+    font-size: 1.2rem;
+    font-weight: $regular;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+}

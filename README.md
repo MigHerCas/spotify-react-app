@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Design: https://www.figma.com/file/52OfJBDwvuxa2ZmEd9GX02/Spotify-App;
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

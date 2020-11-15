@@ -1,0 +1,74 @@
+main {
+  .panel {
+    position: relative;
+    min-height: 40rem;
+
+    @media (min-width: 768px) {
+      min-height: 50rem;
+    }
+
+    @media (min-width: 1024px) {
+      min-height: 55rem;
+    }
+  }
+
+  .playlists-panel {
+    grid-column: 1 / -1;
+
+    @media (min-width: 768px) {
+      grid-column: 1 / 6;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 1 / 6;
+    }
+  }
+
+  .tracks-panel {
+    grid-column: 1 / -1;
+
+    @media (min-width: 768px) {
+      grid-column: 7 / -1;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 7 / -1;
+    }
+
+    @media (min-width: 1200px) {
+      grid-column: 6 / -1;
+    }
+
+    .scrolling-wrapper {
+      @media (min-width: 1024px) {
+        transform: none;
+        right: 0;
+        left: auto;
+        max-width: none;
+        column-gap: 0;
+      }
+
+      @media (min-width: 1200px) {
+        column-count: 2;
+      }
+    }
+  }
+
+  .scrolling-wrapper {
+    position: absolute;
+    width: 100%;
+    max-width: calc(40rem + #{$mediumMargin});
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); // Horizontally centered
+    overflow: auto;
+    background-color: var(--color-secondary);
+    list-style: none;
+
+    @media (min-width: 1024px) {
+      transform: none;
+      left: 0;
+    }
+  }
+}

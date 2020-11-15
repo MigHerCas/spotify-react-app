@@ -1,0 +1,19 @@
+.radius {
+  border-radius: $radius-small;
+}
+
+.radius--big {
+  border-radius: $radius-big;
+}
+
+.shadow--light {
+  box-shadow: $box-shadow_light;
+}
+
+.shadow--dark {
+  box-shadow: $box-shadow_dark;
+}
+
+.padding-default {
+  padding: $mediumMargin;
+}
