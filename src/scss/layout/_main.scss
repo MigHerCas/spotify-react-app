@@ -63,7 +63,7 @@ main {
     left: 50%;
     transform: translateX(-50%); // Horizontally centered
     overflow: auto;
-    background-color: $secondaryColor_dark;
+    background-color: var(--color-secondary);
     list-style: none;
 
     @media (min-width: 1024px) {

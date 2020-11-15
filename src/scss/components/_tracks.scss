@@ -15,10 +15,8 @@
     position: relative;
     width: 100%;
     max-width: 40rem;
-    border: 0;
-    background-color: $primaryColor_dark;
+    background-color: var(--color-primary);
     cursor: pointer;
-    outline: none;
     text-align: left;
     padding-right: 6rem;
 
@@ -34,7 +32,7 @@
       right: $mediumMargin;
       top: 50%;
       background-image: url("data:image/svg+xml,%3Csvg fill='none' height='16' viewBox='0 0 11 16' width='11' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1.40552 1.57143 7.9858 6.42857-7.9858 6.4286z' style='fill-rule:evenodd;clip-rule:evenodd;fill:%23fff;stroke:%23fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round'/%3E%3C/svg%3E"),
-        $warmGradient;
+        var(--color-gradient);
       background-position: 55%;
       background-repeat: no-repeat;
       border-radius: 50%;
@@ -46,7 +44,7 @@
     font-size: 1.5rem;
     font-weight: $semibold;
     line-height: 1.5;
-    color: $white;
+    color: var(--color-text-primary);
     margin-bottom: 0.5rem;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -57,6 +55,6 @@
     font-size: 1.2rem;
     line-height: 1.5;
     font-weight: $regular;
-    color: $lightGrey;
+    color: var(--color-text-secondary);
   }
 }

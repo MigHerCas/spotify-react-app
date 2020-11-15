@@ -1,6 +1,6 @@
 .App {
   padding: $mediumMargin;
-  background-color: $primaryColor_dark;
+  background-color: var(--color-primary);
   min-height: 100vh;
 
   @media (min-width: 1024px) {
