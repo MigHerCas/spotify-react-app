@@ -27,6 +27,7 @@ export default function PlaylistComponent({
       <li className="playlist__item">
         <button
           type="button"
+          tabIndex={0}
           className={`playlist__button padding-default radius--big ${
             selectedPlaylistId === id ? 'selected' : ''
           }`}
