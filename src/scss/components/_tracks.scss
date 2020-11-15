@@ -16,6 +16,7 @@
     cursor: pointer;
     outline: none;
     text-align: left;
+    padding-right: 6rem;
 
     @media (min-width: 768px) {
       max-width: none;
@@ -43,6 +44,9 @@
     line-height: 1.5;
     color: $white;
     margin-bottom: 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .track__subtitle {
