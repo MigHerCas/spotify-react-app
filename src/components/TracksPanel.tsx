@@ -1,18 +1,29 @@
 import React from 'react';
+import { TrackItem } from '../api/track';
+import TrackComponent from './TrackComponent';
 
-export default function TracksPanel(): JSX.Element {
+interface Props {
+  tracks: TrackItem[];
+}
+
+export default function TracksPanel({ tracks }: Props): JSX.Element {
+  console.log(tracks);
+
   return (
     <section className="panel tracks-panel">
       <ol className="scrolling-wrapper padding-default shadow--dark radius--big">
-        <li className="track__item">
-          <button
-            type="button"
-            className="track__button padding-default radius--big"
-          >
-            <h2 className="track__title">Find my way</h2>
-            <h3 className="track__subtitle">Da baby</h3>
-          </button>
-        </li>
+        {tracks &&
+          tracks.map((trackItem) => {
+            const { track } = trackItem;
+            console.log(track);
+            return (
+              <TrackComponent
+                key={track.id}
+                trackName={track.name}
+                artists={track.artists}
+              />
+            );
+          })}
       </ol>
     </section>
   );

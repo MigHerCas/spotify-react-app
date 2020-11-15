@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
+import { TrackItem } from '../api/track';
 import { AccessToken } from '../api/user';
 import usePlaylist from '../hooks/usePlaylist';
 
 interface Props {
   playlistId: string;
   accessToken: AccessToken;
+  setSelectedTracks: Dispatch<SetStateAction<TrackItem[]>>;
 }
 
-export default function PlaylistItem({
+export default function PlaylistComponent({
   playlistId,
   accessToken,
+  setSelectedTracks,
 }: Props): JSX.Element {
   const { playlist } = usePlaylist(accessToken, playlistId);
-  const { id, name, description, images, collaborative } = playlist;
+  const { id, name, description, images, collaborative, tracks } = playlist;
 
   // If playlist data has been fetched
   if (id !== '') {
@@ -21,6 +24,7 @@ export default function PlaylistItem({
         <button
           type="button"
           className="playlist__button padding-default radius--big selected"
+          onClick={() => setSelectedTracks(tracks.items)}
         >
           <div className="playlist__image-wrapper">
             <img src={images[0].url} alt="Alt text" />
