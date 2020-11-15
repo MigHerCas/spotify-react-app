@@ -8,7 +8,7 @@ main {
     }
 
     @media (min-width: 1024px) {
-      min-height: 60rem;
+      min-height: 55rem;
     }
   }
 
@@ -45,8 +45,11 @@ main {
         right: 0;
         left: auto;
         max-width: none;
+        column-gap: 0;
+      }
+
+      @media (min-width: 1200px) {
         column-count: 2;
-        column-gap: $mediumMargin;
       }
     }
   }

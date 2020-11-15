@@ -2,6 +2,10 @@
   .track__item {
     margin-bottom: $mediumMargin;
 
+    @media (min-width: 1200px) {
+      margin-right: $mediumMargin;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
