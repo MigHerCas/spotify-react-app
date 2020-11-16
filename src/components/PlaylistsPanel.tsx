@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react';
 import { TrackItem } from '../api/track';
 import { AccessToken } from '../api/user';
 import DEFAULT_PLAYLISTS_IDS from '../constants/constants';
-import PlaylistComponent from './PlaylistItem';
+import PlaylistComponent from './PlaylistComponent';
 
 interface Props {
   accessToken: AccessToken;
