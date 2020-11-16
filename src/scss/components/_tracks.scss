@@ -1,9 +1,9 @@
 .tracks-panel {
   .track__item {
-    margin-bottom: $mediumMargin;
+    margin-bottom: var(--gutter-md);
 
     @media (min-width: 1200px) {
-      margin-right: $mediumMargin;
+      margin-right: var(--gutter-md);
     }
 
     &:last-child {
@@ -36,7 +36,7 @@
       width: 4rem;
       height: 4rem;
       position: absolute;
-      right: $mediumMargin;
+      right: var(--gutter-md);
       top: 50%;
       background-image: url("data:image/svg+xml,%3Csvg fill='none' height='16' viewBox='0 0 11 16' width='11' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1.40552 1.57143 7.9858 6.42857-7.9858 6.4286z' style='fill-rule:evenodd;clip-rule:evenodd;fill:%23fff;stroke:%23fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round'/%3E%3C/svg%3E"),
         var(--color-gradient);
@@ -50,7 +50,7 @@
 
   .track__title {
     font-size: 1.5rem;
-    font-weight: $semibold;
+    font-weight: var(--weight-semibold);
     line-height: 1.5;
     color: var(--color-text-primary);
     margin-bottom: 0.5rem;
@@ -62,7 +62,7 @@
   .track__subtitle {
     font-size: 1.2rem;
     line-height: 1.5;
-    font-weight: $regular;
+    font-weight: var(--weight-regular);
     color: var(--color-text-secondary);
   }
 }

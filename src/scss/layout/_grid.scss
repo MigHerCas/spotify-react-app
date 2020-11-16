@@ -1,14 +1,14 @@
 .App {
-  padding: $mediumMargin;
+  padding: var(--gutter-md);
   background-color: var(--color-primary);
   min-height: 100vh;
 
   @media (min-width: 768px) {
-    padding: $largeMargin $mediumMargin;
+    padding: var(--gutter-lg) var(--gutter-md);
   }
 
   @media (min-width: 1024px) {
-    padding: $largeMargin;
+    padding: var(--gutter-lg);
   }
 }
 

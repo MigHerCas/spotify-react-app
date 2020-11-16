@@ -1,19 +1,19 @@
 .radius {
-  border-radius: $radius-small;
+  border-radius: var(--radius-small);
 }
 
 .radius--big {
-  border-radius: $radius-big;
+  border-radius: var(--radius-big);
 }
 
 .shadow--light {
-  box-shadow: $box-shadow_light;
+  box-shadow: var(--box-shadow-light);
 }
 
 .shadow--dark {
-  box-shadow: $box-shadow_dark;
+  box-shadow: var(--box-shadow-dark);
 }
 
 .padding-default {
-  padding: $mediumMargin;
+  padding: var(--gutter-md);
 }

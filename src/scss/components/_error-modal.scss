@@ -9,7 +9,7 @@
 }
 
 .error-title {
-  margin-bottom: $mediumMargin;
+  margin-bottom: var(--gutter-md);
   font-size: 3rem;
   color: var(--color-text-primary);
 
@@ -34,5 +34,5 @@
   top: 30%;
   left: 0;
   text-align: center;
-  padding: 0 $mediumMargin;
+  padding: 0 var(--gutter-md);
 }

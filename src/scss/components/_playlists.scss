@@ -1,6 +1,6 @@
 .playlists-panel {
   .playlist__item {
-    margin-bottom: $mediumMargin;
+    margin-bottom: var(--gutter-md);
 
     &:last-child {
       margin-bottom: 0;
@@ -16,7 +16,7 @@
 
   .playlist__button {
     &:focus {
-      transform: translateX($smallMargin);
+      transform: translateX(var(--gutter-sm));
       outline: none;
     }
 
@@ -46,32 +46,32 @@
     object-fit: cover;
     width: 8rem;
     height: 8rem;
-    border-radius: $radius-small;
+    border-radius: var(--radius-small);
   }
 
   .playlist__details {
     text-align: left;
-    padding-left: calc(8rem + #{$mediumMargin}); // To fit floated image
+    padding-left: calc(8rem + #{var(--gutter-md)}); // To fit floated image
   }
 
   .playlist__title {
     color: var(--color-text-primary);
     font-size: 1.5rem;
     line-height: 23px;
-    font-weight: $semibold;
+    font-weight: var(--weight-semibold);
   }
 
   .playlist__subtitle {
     color: var(--color-text-secondary);
     font-size: 1.4rem;
     line-height: 1.5;
-    font-weight: $regular;
+    font-weight: var(--weight-regular);
     margin-bottom: 0.5rem;
   }
 
   .playlist__description {
     font-size: 1.2rem;
-    font-weight: $regular;
+    font-weight: var(--weight-regular);
     line-height: 1.5;
     color: var(--color-text-secondary);
   }
