@@ -22,4 +22,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [ ] Animations
 
 # Author
-Miguel Hernanz de Castro, who thanks Mendix this opportunity! 
+Miguel Hernanz de Castro, who thanks Mendix for this opportunity! 
