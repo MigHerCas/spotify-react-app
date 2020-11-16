@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react';
 import { TrackItem } from '../api/track';
 import { AccessToken } from '../api/user';
 import usePlaylist from '../hooks/usePlaylist';
+import ErrorModal from './shared/ErrorModal';
 
 interface Props {
   playlistId: string;
@@ -18,10 +19,23 @@ export default function PlaylistComponent({
   setSelectedPlaylistId,
   setSelectedTracks,
 }: Props): JSX.Element {
-  const { playlist } = usePlaylist(accessToken, playlistId);
+  const { playlist, playlistLoading, playlistError } = usePlaylist(
+    accessToken,
+    playlistId
+  );
+
   const { id, name, description, images, collaborative, tracks } = playlist;
 
+  const handleClick = () => {
+    setSelectedPlaylistId(id);
+    setSelectedTracks(tracks.items);
+  };
+
   // If playlist data has been fetched
+  if (playlistError) {
+    return <ErrorModal error={playlistError} />;
+  }
+
   if (id !== '') {
     return (
       <li className="playlist__item">
@@ -31,24 +45,26 @@ export default function PlaylistComponent({
           className={`playlist__button padding-default radius--big ${
             selectedPlaylistId === id ? 'selected' : ''
           }`}
-          onClick={() => {
-            setSelectedPlaylistId(id);
-            setSelectedTracks(tracks.items);
-          }}
+          onClick={handleClick}
         >
           <div className="playlist__image-wrapper">
             <img src={images[0].url} alt="Alt text" />
           </div>
           <div className="playlist__details">
-            <h2 className="playlist__title">{name}</h2>
+            <h2 className="playlist__title">
+              {playlistLoading ? 'Loading...' : name}
+            </h2>
             <h3 className="playlist__subtitle">
               {collaborative ? 'Collaborative' : 'Non collaborative'}
             </h3>
-            <p className="playlist__description">{description}</p>
+            <p className="playlist__description">
+              {playlistLoading ? 'Loading...' : description}
+            </p>
           </div>
         </button>
       </li>
     );
   }
-  return <p>Loading</p>;
+
+  return <></>;
 }

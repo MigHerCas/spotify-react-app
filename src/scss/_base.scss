@@ -21,6 +21,10 @@ body {
   scroll-behavior: smooth;
 }
 
+body.locked-by-modal {
+  overflow: hidden;
+}
+
 /*
   * Reset top margins on titles that are first-child.
 */

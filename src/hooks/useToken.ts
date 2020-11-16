@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { ApiError } from '../api/error';
 import { AccessToken, AccessTokenResponse } from '../api/user';
 
 type UseTokenHookReturn = {
   accessToken: AccessToken | undefined;
   accessIsLoading: boolean;
-  accessError: boolean;
+  accessError: ApiError;
 };
 
 const useToken = (
@@ -13,12 +14,12 @@ const useToken = (
 ): UseTokenHookReturn => {
   const [accessToken, setAccessToken] = useState<AccessToken>();
   const [accessIsLoading, setAccessIsLoading] = useState(false);
-  const [accessError, setAccessError] = useState(false);
+  const [accessError, setAccessError] = useState<ApiError>('');
 
   useEffect(() => {
     const url = `${REACT_APP_SPOTIFY_ACCOUNT_TOKEN_API_URL}`;
     const getAccessToken = async (): Promise<void> => {
-      setAccessError(false);
+      setAccessError('');
       setAccessIsLoading(true);
 
       try {
@@ -36,7 +37,7 @@ const useToken = (
         setAccessToken(accessTokenResponse.access_token);
         setAccessIsLoading(false);
       } catch (error) {
-        setAccessError(error);
+        setAccessError('Access error');
       }
     };
 

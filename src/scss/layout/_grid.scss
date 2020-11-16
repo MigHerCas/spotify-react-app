@@ -3,6 +3,10 @@
   background-color: var(--color-primary);
   min-height: 100vh;
 
+  @media (min-width: 768px) {
+    padding: $largeMargin $mediumMargin;
+  }
+
   @media (min-width: 1024px) {
     padding: $largeMargin;
   }

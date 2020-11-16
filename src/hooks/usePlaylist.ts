@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ApiError } from '../api/error';
 import { PlaylistItem } from '../api/playlist';
 import { AccessToken } from '../api/user';
 import NullyPlaylist from '../utils';
@@ -6,7 +7,7 @@ import NullyPlaylist from '../utils';
 type PlaylistHookReturn = {
   playlist: PlaylistItem;
   playlistLoading: boolean;
-  playlistError: boolean;
+  playlistError: ApiError;
 };
 
 const { REACT_APP_SPOTIFY_PLAYLIST_URL } = process.env;
@@ -17,13 +18,13 @@ const usePlaylist = (
 ): PlaylistHookReturn => {
   const [playlist, setPlaylist] = useState<PlaylistItem>(NullyPlaylist);
   const [playlistLoading, setIsLoading] = useState(false);
-  const [playlistError, setIsError] = useState(false);
+  const [playlistError, setIsError] = useState<ApiError>('');
 
   useEffect(() => {
     const url = `${REACT_APP_SPOTIFY_PLAYLIST_URL}/${playlistId}`;
 
     const fetchPlaylist = async (): Promise<void> => {
-      setIsError(false);
+      setIsError('');
       setIsLoading(true);
 
       try {
@@ -35,6 +36,11 @@ const usePlaylist = (
         });
 
         const apiResponse = await response;
+
+        if (!apiResponse.ok) {
+          setIsError('Fetch error');
+        }
+
         const playlistItem: PlaylistItem = await apiResponse.json();
         setPlaylist(playlistItem);
         setIsLoading(false);

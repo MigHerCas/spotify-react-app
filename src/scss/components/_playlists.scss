@@ -15,8 +15,12 @@
   }
 
   .playlist__button {
-    &.selected,
     &:focus {
+      transform: translateX($smallMargin);
+      outline: none;
+    }
+
+    &.selected {
       background: var(--color-gradient);
 
       .playlist__title,
