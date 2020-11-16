@@ -25,9 +25,7 @@ export default function TrackComponent({
       <button
         type="button"
         ref={firstTrack ? ref : null}
-        className={`track__button padding-default radius--big ${
-          firstTrack ? 'first-track' : ''
-        }`}
+        className="track__button padding-default radius--big"
       >
         {children}
       </button>

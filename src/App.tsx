@@ -22,7 +22,8 @@ export default function App(): JSX.Element {
 
   useEffect(() => {
     if (firstTrackRef.current) {
-      firstTrackRef.current.focus();
+      // Added timeout to fit playlist item animation (300ms)
+      setTimeout(() => firstTrackRef?.current?.focus(), 300);
     }
   }, [firstTrackRef]);
   return (
