@@ -27,7 +27,7 @@
 
     &:focus {
       &::before {
-        right: 1rem;
+        transform: translateY(-50%) translateX(1rem);
       }
     }
 
@@ -44,7 +44,7 @@
       background-repeat: no-repeat;
       border-radius: 50%;
       transform: translateY(-50%);
-      transition: right 300ms ease-out;
+      transition: transform 300ms ease-out;
     }
   }
 
