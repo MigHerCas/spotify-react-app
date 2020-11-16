@@ -24,10 +24,17 @@ header {
     background-color: var(--color-secondary);
     border: none;
     cursor: pointer;
+    outline: none;
+    transition: transform 300ms ease-out;
 
     @media (min-width: 1024px) {
       width: 7rem;
       height: 7rem;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
     }
 
     &::before {
