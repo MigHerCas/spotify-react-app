@@ -1,13 +1,13 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { TrackItem } from '../api/track';
-import { AccessToken } from '../api/user';
+import { AccessToken, ID } from '../api/user';
 import DEFAULT_PLAYLISTS_IDS from '../constants/constants';
 import PlaylistComponent from './PlaylistComponent';
 
 interface Props {
   accessToken: AccessToken;
-  selectedPlaylistId: string;
-  setSelectedPlaylistId: Dispatch<SetStateAction<string>>;
+  selectedPlaylistId: ID;
+  setSelectedPlaylistId: Dispatch<SetStateAction<ID>>;
   setSelectedTracks: Dispatch<SetStateAction<TrackItem[]>>;
 }
 

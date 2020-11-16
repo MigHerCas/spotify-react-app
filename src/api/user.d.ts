@@ -1,5 +1,6 @@
-type TokenType = 'Bearer' | 'Access';
-type AccessToken = string | undefined;
+export type TokenType = 'Bearer' | 'Access';
+export type AccessToken = string | undefined;
+export type ID = string;
 
 export interface AccessTokenResponse {
   access_token: AccessToken;

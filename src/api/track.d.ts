@@ -1,5 +1,7 @@
+import { ID } from './user.d';
+
 export interface Artist {
-  id: string;
+  id: ID;
   name: string;
 }
 
@@ -8,7 +10,7 @@ export interface TrackItem {
 }
 
 export interface Track {
-  id: string;
+  id: ID;
   name: string;
   artists: Artist[];
 }
