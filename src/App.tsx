@@ -23,7 +23,7 @@ export default function App(): JSX.Element {
   useEffect(() => {
     if (firstTrackRef.current) {
       // Added timeout to fit playlist item animation (300ms)
-      setTimeout(() => firstTrackRef?.current?.focus(), 400);
+      setTimeout(() => firstTrackRef?.current?.focus(), 300);
     }
   }, [firstTrackRef]);
   return (
