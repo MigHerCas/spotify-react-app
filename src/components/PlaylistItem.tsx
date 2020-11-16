@@ -21,6 +21,10 @@ export default function PlaylistComponent({
   const { playlist } = usePlaylist(accessToken, playlistId);
   const { id, name, description, images, collaborative, tracks } = playlist;
 
+  const handleClick = () => {
+    setSelectedPlaylistId(id);
+    setSelectedTracks(tracks.items);
+  };
   // If playlist data has been fetched
   if (id !== '') {
     return (
@@ -31,10 +35,7 @@ export default function PlaylistComponent({
           className={`playlist__button padding-default radius--big ${
             selectedPlaylistId === id ? 'selected' : ''
           }`}
-          onClick={() => {
-            setSelectedPlaylistId(id);
-            setSelectedTracks(tracks.items);
-          }}
+          onClick={handleClick}
         >
           <div className="playlist__image-wrapper">
             <img src={images[0].url} alt="Alt text" />

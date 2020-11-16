@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TrackItem } from './api/track';
 import Grid from './components/layout/Grid';
 import Header from './components/layout/Header';
@@ -18,7 +18,13 @@ export default function App(): JSX.Element {
   );
   const [selectedPlaylist, setSelectedPlaylist] = useState<string>('');
   const [selectedTracks, setSelectedTracks] = useState<TrackItem[]>([]);
+  const firstTrackRef = React.createRef<HTMLButtonElement>();
 
+  useEffect(() => {
+    if (firstTrackRef.current) {
+      firstTrackRef.current.focus();
+    }
+  }, [firstTrackRef]);
   return (
     <div className="App">
       <Header />
@@ -29,7 +35,7 @@ export default function App(): JSX.Element {
           setSelectedPlaylistId={setSelectedPlaylist}
           setSelectedTracks={setSelectedTracks}
         />
-        <TracksPanel tracks={selectedTracks} />
+        <TracksPanel tracks={selectedTracks} firstTrackRef={firstTrackRef} />
       </Grid>
     </div>
   );
