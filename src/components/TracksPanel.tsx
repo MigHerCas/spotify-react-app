@@ -14,9 +14,6 @@ export default function TracksPanel({
 }: Props): JSX.Element {
   const [selectedTrackId, setSelectedTrackId] = useState<ID>('');
 
-  useEffect(() => {
-    console.log(selectedTrackId);
-  }, [selectedTrackId]);
   return (
     <section className="panel tracks-panel">
       <ol className="scrolling-wrapper padding-default shadow--dark radius--big">
