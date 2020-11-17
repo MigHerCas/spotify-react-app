@@ -48,6 +48,20 @@
     }
   }
 
+  .track__button.selected {
+    background-image: var(--color-gradient);
+
+    .track__title,
+    .track__subtitle {
+      color: var(--color-white);
+    }
+
+    &::before {
+      background-image: none;
+      background-color: var(--color-white);
+    }
+  }
+
   .track__title {
     font-size: 1.5rem;
     font-weight: var(--weight-semibold);

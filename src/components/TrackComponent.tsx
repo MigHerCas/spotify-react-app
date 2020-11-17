@@ -1,40 +1,40 @@
-import React, { RefObject } from 'react';
+import React, { Dispatch, RefObject, SetStateAction } from 'react';
 import { Artist } from '../api/track';
+import { ID } from '../api/user';
 
 interface Props {
+  trackId: ID;
   trackName: string;
   artists: Artist[];
   firstTrack: boolean;
   firstTrackRef: RefObject<HTMLButtonElement>;
+  selectedTrackId: ID;
+  setSelectedTrackId: Dispatch<SetStateAction<ID>>;
 }
-
-interface TrackButtonProps {
-  children: React.ReactNode;
-}
-
-type Ref = HTMLButtonElement;
 
 export default function TrackComponent({
+  trackId,
   trackName,
   artists,
   firstTrack = false,
   firstTrackRef,
+  selectedTrackId,
+  setSelectedTrackId,
 }: Props): JSX.Element {
-  const TrackButton = React.forwardRef<Ref, TrackButtonProps>(
-    ({ children }: TrackButtonProps, ref) => (
-      <button
-        type="button"
-        ref={firstTrack ? ref : null}
-        className="track__button padding-default radius--big"
-      >
-        {children}
-      </button>
-    )
-  );
+  const handleClick = () => {
+    setSelectedTrackId(trackId);
+  };
 
   return (
     <li className="track__item">
-      <TrackButton ref={firstTrackRef}>
+      <button
+        type="button"
+        ref={firstTrack ? firstTrackRef : null}
+        className={`track__button padding-default radius--big ${
+          selectedTrackId === trackId ? 'selected' : ''
+        }`}
+        onClick={handleClick}
+      >
         <h2 className="track__title">{trackName}</h2>
         {artists &&
           artists.map(({ id, name }) => (
@@ -42,7 +42,7 @@ export default function TrackComponent({
               {name}
             </h3>
           ))}
-      </TrackButton>
+      </button>
     </li>
   );
 }
