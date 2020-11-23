@@ -1,6 +1,7 @@
 # Spotify React App
 
-[Design](https://www.figma.com/file/52OfJBDwvuxa2ZmEd9GX02/Spotify-App) - WIP
+[Design](https://www.figma.com/file/52OfJBDwvuxa2ZmEd9GX02/Spotify-App) - WIP.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Features
