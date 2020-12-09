@@ -14,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Responsive design.
 - [x] Theme switching.
 
-# Features that I would have implemented with more time
+# Coming features 
 - [ ] Testing with Enzyme and Jest
 - [ ] Documentation 
 - [ ] Deploying to netlify
